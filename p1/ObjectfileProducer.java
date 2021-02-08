@@ -9,11 +9,7 @@ public class ObjectfileProducer implements MessageProducer
     private int size;
     Message[] messages;
 
-    /**
-     * Constructor for the objectFileProducer wich reads data from a dat file wich contains
-     * integers and objects of messages
-     * @param filename
-     */
+
     public ObjectfileProducer(String filename)
     {
         try(FileInputStream fIS = new FileInputStream(filename);

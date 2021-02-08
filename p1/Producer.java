@@ -1,8 +1,15 @@
 /**
- *
+ * Eric Lundin
+ * al3214
+ * 2021-02-08
  */
 package p1;
 
+/**
+ * this class fetches messageProducer instances and uses them to place Message instances in the messageBuffer
+ * @author Eric Lundin
+ * @version 1.0
+ */
 public class Producer
 {
     private Buffer<MessageProducer> producerBuffer;
@@ -11,8 +18,9 @@ public class Producer
 
     /**
      *
-     * @param producerBuffer
-     * @param messageBuffer
+     * constructor initializes the producerBuffer and the messageBuffer
+     * @param producerBuffer Buffer for MessageProducers
+     * @param messageBuffer Buffer for Messages
      */
     public Producer(Buffer<MessageProducer> producerBuffer, Buffer<Message> messageBuffer)
     {
@@ -21,7 +29,7 @@ public class Producer
     }
 
     /**
-     *
+     *Starts a new worker instance
      */
     public void start()
     {
@@ -36,6 +44,7 @@ public class Producer
     {
 
         /**
+         * Uses the created worker to move the Message instance from the messageProducer instance in to the messageBuffer
          * @Override
          */
         public void run()

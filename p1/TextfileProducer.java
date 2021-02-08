@@ -1,3 +1,8 @@
+/**
+ * Eric Lundin
+ * al3214
+ * 2021-02-08
+ */
 package p1;
 
 import javax.swing.*;
@@ -5,6 +10,11 @@ import java.io.*;
 
 import static java.nio.charset.StandardCharsets.UTF_8;
 
+/**
+ * TextfileProducer reads a text file with a specified name
+ * @author Eric Lundin
+ * @version 1.0
+ */
 public class TextfileProducer implements MessageProducer
 {
     private int delay;
@@ -14,11 +24,11 @@ public class TextfileProducer implements MessageProducer
 
     /**
      * Constructor for TextfileProducer
-     * Takes a string for the target filename.
+     * Takes a string as the target filename.
      * creates a BufferedReader to read strings from the target txt file
      * lines 0 through 2 are used as parameters for times, delay and length
      * lines 3 through 23 are alternatingly used as parameters for text and icon, these are stored in Message object in the messages array
-     * @param filename
+     * @param filename String for the targetfile
      */
     public TextfileProducer(String filename)
     {
@@ -48,8 +58,8 @@ public class TextfileProducer implements MessageProducer
     }
 
     /**
-     *
-     * @return
+     * the amount of delay (in ms) between each message
+     * @return returns delay
      */
     @Override
     public int delay()
@@ -58,8 +68,8 @@ public class TextfileProducer implements MessageProducer
     }
 
     /**
-     *
-     * @return
+     * the amount of times the each message is to be displayed
+     * @return returns times
      */
     @Override
     public int times()
@@ -68,9 +78,9 @@ public class TextfileProducer implements MessageProducer
     }
 
     /**
-     * if messages is null returns zero
-     * else returns messages.length
-     * @return
+     *
+     *
+     * @return if messages is null returns zero else returns messages.length
      */
     @Override
     public int size()
@@ -79,8 +89,8 @@ public class TextfileProducer implements MessageProducer
     }
 
     /**
-     *
-     * @return
+     *returns the next message at the specified index
+     * @return messages
      */
     @Override
     public Message nextMessage()
