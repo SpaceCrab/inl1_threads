@@ -12,6 +12,14 @@ public class TextfileProducer implements MessageProducer
     private int currentIndex = -1;
     private Message[] messages;
 
+    /**
+     * Constructor for TextfileProducer
+     * Takes a string for the target filename.
+     * creates a BufferedReader to read strings from the target txt file
+     * lines 0 through 2 are used as parameters for times, delay and length
+     * lines 3 through 23 are alternatingly used as parameters for text and icon, these are stored in Message object in the messages array
+     * @param filename
+     */
     public TextfileProducer(String filename)
     {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(filename),UTF_8)))
@@ -39,24 +47,41 @@ public class TextfileProducer implements MessageProducer
 
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int delay()
     {
         return delay;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public int times()
     {
         return times;
     }
 
+    /**
+     * if messages is null returns zero
+     * else returns messages.length
+     * @return
+     */
     @Override
     public int size()
     {
         return (messages == null) ? 0 : messages.length;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Message nextMessage()
     {
