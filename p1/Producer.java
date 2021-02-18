@@ -42,7 +42,6 @@ public class Producer
      */
     private class Worker extends Thread
     {
-
         /**
          * Uses the created worker to move the Message instance from the messageProducer instance in to the messageBuffer
          * @Override

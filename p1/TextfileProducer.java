@@ -45,7 +45,6 @@ public class TextfileProducer implements MessageProducer
             {
                 text = br.readLine();
                 icon = new ImageIcon(br.readLine());
-
                 messages[i] = new Message(text, icon);
             }
 
